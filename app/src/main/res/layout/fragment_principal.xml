@@ -1,0 +1,28 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginTop="15dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragments.PrincipalFragment">
+
+
+    <fragment
+        android:id="@+id/encabezado"
+        android:name="com.innovagenesis.aplicaciones.android.flujotrabajo.fragments.EncabezadoFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        tools:layout="@layout/fragment_encabezado" />
+
+
+    <fragment
+        android:id="@+id/estructura"
+        android:name="com.innovagenesis.aplicaciones.android.flujotrabajo.fragments.EstructuraFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        tools:layout="@layout/fragment_estructura" />
+
+
+</LinearLayout>

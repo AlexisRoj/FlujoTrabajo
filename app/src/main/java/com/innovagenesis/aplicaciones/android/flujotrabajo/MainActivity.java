@@ -1,9 +1,11 @@
 package com.innovagenesis.aplicaciones.android.flujotrabajo;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -12,30 +14,45 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 
 import com.innovagenesis.aplicaciones.android.flujotrabajo.dialogos.DialogoAgregarPrecio;
+import com.innovagenesis.aplicaciones.android.flujotrabajo.fragments.PrincipalFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+        final int colorPrecios = ContextCompat.getColor(this, R.color.green_400);
+
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        final TabLayout tab = (TabLayout) findViewById(R.id.tab_layout);
+
+        final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 DialogoAgregarPrecio dialogoAgregarPrecio = new DialogoAgregarPrecio();
                 dialogoAgregarPrecio.setCancelable(false);
-                dialogoAgregarPrecio.show(getSupportFragmentManager(),DialogoAgregarPrecio.TAG);
+                dialogoAgregarPrecio.show(getSupportFragmentManager(), DialogoAgregarPrecio.TAG);
 
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Window window = MainActivity.this.getWindow();
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    window.setNavigationBarColor(colorPrecios);
+                    window.setStatusBarColor(colorPrecios);
+                    toolbar.setBackgroundColor(colorPrecios);
+                    fab.setBackgroundColor(colorPrecios);
+                    tab.setBackgroundColor(colorPrecios);
+                }
             }
         });
 
@@ -47,6 +64,12 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.contenedor, new PrincipalFragment())
+                .commit();
+
+
     }
 
     @Override

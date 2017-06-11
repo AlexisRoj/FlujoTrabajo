@@ -14,11 +14,19 @@
     <string name="precio">Precio</string>
     <string name="cancelar">Cancelar</string>
     <string name="guardar">Guardar</string>
+    <string name="contenido_del_producto">Contenido del producto</string>
 
-    <array name="tabs">
+    <!-- Arreglos de los tabs-->
+    <array name="tabs_img">
         <item>@drawable/ic_clientes</item>
-        <item>@drawable/ic_acuerdos</item>
         <item>@drawable/ic_precios</item>
-
     </array>
+
+    <string-array name="tabs_name">
+        <item>@string/clientes</item>
+        <item>@string/acuerdos</item>
+    </string-array>
+
+    <string name="cliente_selecionado">Cliente selecionado:</string>
+
 </resources>
