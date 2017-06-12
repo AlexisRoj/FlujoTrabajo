@@ -17,7 +17,7 @@ import android.view.View;
 import android.view.Window;
 
 import com.innovagenesis.aplicaciones.android.flujotrabajo.dialogos.DialogoAgregarPrecio;
-import com.innovagenesis.aplicaciones.android.flujotrabajo.fragments.PrincipalFragment;
+import com.innovagenesis.aplicaciones.android.flujotrabajo.fragments.TabsFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -65,8 +65,11 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+
+
+
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.contenedor, new PrincipalFragment())
+                .add(R.id.contenedor, new TabsFragment())
                 .commit();
 
 

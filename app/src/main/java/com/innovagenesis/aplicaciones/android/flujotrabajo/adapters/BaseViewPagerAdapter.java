@@ -4,7 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.innovagenesis.aplicaciones.android.actividadfinalunidadcincov2.BaseFragment;
+import com.innovagenesis.aplicaciones.android.flujotrabajo.fragments.BaseFragment;
 
 /**
  * Adaptador encargado de rellenar los tabs
