@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.innovagenesis.aplicaciones.android.flujotrabajo.MainActivity"
-    android:orientation="vertical"
-    tools:showIn="@layout/app_bar_main">
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/app_bar_main_with_tabs">
 
     <FrameLayout
         android:id="@+id/contenedor"

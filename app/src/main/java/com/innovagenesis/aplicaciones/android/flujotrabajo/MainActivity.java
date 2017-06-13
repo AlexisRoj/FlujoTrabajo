@@ -67,9 +67,8 @@ public class MainActivity extends AppCompatActivity
 
 
 
-
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.contenedor, new TabsFragment())
+                .replace(R.id.container, new TabsFragment())
                 .commit();
 
 
